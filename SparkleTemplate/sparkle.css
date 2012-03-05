@@ -41,7 +41,44 @@ h1.app-name {
 	margin: 10px 20px 10px 20px;
 }
 
+.release-note:first-child {
+	border-top: 1px solid #333;
+}
+
+.bug::before {
+	content: "💣";
+	margin-right: 4px;
+}
+
+.bug {
+	background: -webkit-gradient(linear, left top, left bottom, from(#ffd200), to(#f9c900));
+	color: black;
+}
+
+.feature::before {
+	content: "💡";
+	margin-right: 4px;
+}
+
+.feature {
+	color: white;
+	background: -webkit-gradient(linear, left top, left bottom, from(#72c400), to(#50ba04));
+}
+
+.release-note {
+	border-left: 1px solid #333;
+	border-right: 1px solid #333;
+	border-bottom: 1px solid #333;
+
+	list-style-type: none;
+	padding: 6px 6px 6px 6px;
+	font-size: 14px;
+/* 	font-weight: bold; */
+	text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
+}
+
 .vcs-logs {
+	margin: 10px 20px 10px 20px;
 	border: 1px solid #ccc;
 	border-radius: 4px 4px;
 	background: #fafafa;
