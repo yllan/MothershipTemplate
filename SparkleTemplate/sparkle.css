@@ -8,7 +8,7 @@ body {
 	background-color: #f5f5f5;
 }
 
-h1.app-name {
+h1#app-name {
 	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f5f5f5));
 	color: #f5f5f5;
 	font-size: 24px;
@@ -16,6 +16,10 @@ h1.app-name {
 	text-align: center;
 	text-shadow: 0px 2px 5px black;
 	margin-bottom: 5px;
+}
+
+.version {
+	margin-bottom: 30px;
 }
 
 .version-number::before {
@@ -42,39 +46,55 @@ h1.app-name {
 }
 
 .release-note:first-child {
-	border-top: 1px solid #333;
+	border-top: 1px solid #444;
 }
 
-.bug::before {
+.bug .subject::before {
 	content: "💣";
 	margin-right: 4px;
-}
-
-.bug {
-	background: -webkit-gradient(linear, left top, left bottom, from(#ffd200), to(#f9c900));
 	color: black;
 }
 
-.feature::before {
-	content: "💡";
-	margin-right: 4px;
+.bug .subject {
+	background: -webkit-gradient(linear, left top, left bottom, from(#ffd200), to(#f2c300));
+	color: #7d6600;
 }
 
-.feature {
-	color: white;
-	background: -webkit-gradient(linear, left top, left bottom, from(#72c400), to(#50ba04));
+.feature .subject::before {
+	content: "💡";
+	margin-right: 4px;
+	color: black;
+}
+
+.feature .subject {
+	background: -webkit-gradient(linear, left top, left bottom, from(#72c400), to(#4dba02));
+	color: #2e5f01;
 }
 
 .release-note {
-	border-left: 1px solid #333;
-	border-right: 1px solid #333;
-	border-bottom: 1px solid #333;
+	border-left: 1px solid #444;
+	border-right: 1px solid #444;
+	border-bottom: 1px solid #444;
 
 	list-style-type: none;
-	padding: 6px 6px 6px 6px;
+}
+
+.release-note .subject {
+	/*color: rgba(0,0,0,0.5);*/
+	text-shadow: 0px 1px 0px rgba(255,255,255,0.6);
+	font-weight: bold;
 	font-size: 14px;
-/* 	font-weight: bold; */
-	text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
+	padding: 2px;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.release-note .message {
+	font-size: 12px;
+	text-shadow: none;
+	margin-left: 2px;
+	padding: 4px 2px 4px 20px;
+	background-color: #fafafa;
+	color: #666;
 }
 
 .vcs-logs {
@@ -90,17 +110,19 @@ h1.app-name {
 }
 
 .commit {
+	list-style-type: none;
+	font-size: 12px;
 	border-top: 1px solid #ccc;
 	padding: 6px 4px 2px 4px;
 	color: #666;
 }
 
-.commit-hex::before {
+.commit .hex::before {
 	content: "commit ";
 	color: #aaa;
 }
 
-.commit-hex {
+.commit .hex {
 	font-family: Menlo, Monaco, Courier, monospace;
 	font-size: 12px;
 	font-weight: normal;
@@ -109,24 +131,25 @@ h1.app-name {
 	margin-right: 4px;
 }
 
-.commit-message {
+.commit .message {
 	font-size: 12px;
 	margin-left: 4px;
 }
 
-.commit-message .caption {
+.commit .subject {
 	font-weight: bold;
 	text-shadow: 0 2px 0 white;
 	margin-bottom: 4px;
+	margin-left: 4px;
 	color: #444;
 }
 
-.commit-date::before {
+.commit .date::before {
 	content: "🕒";
 	margin-right: 4px;
 }
 
-.commit-date {
+.commit .date {
 	font-weight: lighter;
 	font-size: 9px;
 	font-family: Menlo, Monaco, Courier, monospace;
